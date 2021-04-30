@@ -1,0 +1,35 @@
+div {
+  width: 365px;
+  box-shadow: 0px 0px 10px #000000;
+  text-align: center;
+
+  padding: 40px;
+  border-top: 9px solid #00CDA8;
+  border-radius: 9px;
+
+  margin-left: 400px;
+}
+
+h3 {
+  font-size: 35px;
+  margin-bottom: 25px;
+  margin-top: 40px;
+}
+
+p {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+button {
+  width: 350px;
+  height: 80px;
+
+  background: #00CDA8;
+  border: none;
+  border-radius: 8px;
+
+  /* border-bottom: 6px solid #00725d; */
+  box-shadow: 0 0 0 #00725d;
+}

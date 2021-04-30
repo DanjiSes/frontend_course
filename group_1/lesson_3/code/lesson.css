@@ -1,0 +1,94 @@
+/**
+* Common
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/**
+* Utilites
+*/
+
+.text-center {
+    text-align: center;
+}
+
+.text-orange {
+    color: #FD8569;
+}
+
+.text-black {
+    color: #333;
+}
+
+.text-gray {
+    color: #ABABAB;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.bg-blue {
+    background: #4EB2F7;
+}
+
+.bg-wiolet {
+    background: #C049F8;
+}
+
+.bg-blue-dark {
+    background: #817EFF;
+}
+
+.bg-pink {
+    background: #F74770;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/**
+* Blocks
+*/
+
+.title {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    margin-bottom: 70px;
+}
+
+.card {
+    padding: 70px 42px 0;
+    width: 260px;
+    margin: 0 15px 40px;
+}
+
+.btn {
+    padding: 20px 50px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    outline: none;
+}
+
+.btn > img, .btn > span {
+    vertical-align: middle;
+}
+
+.btn > img {
+    margin-right: 10px;
+}
+
+.btn {
+    position: relative;
+    top: 25px;
+}

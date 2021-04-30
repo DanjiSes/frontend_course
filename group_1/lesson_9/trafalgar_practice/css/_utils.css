@@ -1,0 +1,19 @@
+.text-center {
+  text-align: center;
+}
+
+.h1 {
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.text {
+  color: #7D7987;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 32px;
+  margin-bottom: 45px;
+  margin-top: 0;
+}

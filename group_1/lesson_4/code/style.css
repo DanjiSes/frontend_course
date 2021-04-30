@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: pink;
+}
+
+body p:first-child {
+    color: darkorchid;
+}
+
+p:first-of-type {
+    color: palegreen;
+}
+
+body p:last-child {
+    /* display: none; */
+}
+
+p:last-of-type {
+    font-weight: bold;
+}
+
+a:visited {
+    color: green;
+}
+
+input[type="tel"] {
+    border: 2px solid black;
+}
+
+input[type="email"] {
+    color: yellow;
+    border: 3px solid yellow;
+}
+
+a[href^="http://"] {
+    color: red;
+    text-decoration: line-through;
+}
+
+#id {}
+.text-center {}
+*[class="text-center"] {}
+*[id="id"] {}
+
+a[href$=".ru"] {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a[href*="google"] {
+    color: black;
+    font-weight: bold;
+}
+
+p:target {
+    font-weight: bold;
+    line-height: 1.5;
+    color: red;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    height: 100vh;
+
+    display: none;
+}
+
+.mobile-menu:target {
+    display: block;
+}
+
+ul > li:nth-child(4n + 1) {
+    background: green;
+}
+
+ul > li:nth-child(4n + 2) {
+    background: yellow;
+}
+
+ul > li:nth-child(4n + 3) {
+    background: red;
+}
+
+ul > li:nth-child(4n + 4) {
+    background: #ffd;
+}
+
+input {
+    border: 2px solid #ccc;
+    outline: none;
+}
+input:focus {
+    border: 2px solid #000;
+}

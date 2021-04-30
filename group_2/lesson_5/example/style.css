@@ -1,0 +1,32 @@
+.yellow {
+  background: yellow;
+  width: 400px;
+  height: 400px;
+
+  position: relative;
+
+  padding: 20px;
+  color: #fff;
+}
+
+.dark {
+  background: #000;
+
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+
+  right: 0;
+}
+
+.pink {
+  background: pink;
+
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+
+  bottom: 0;
+}

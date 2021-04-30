@@ -1,0 +1,11 @@
+header {
+    background: #ccc;
+}
+
+.bg-red {
+    background: red;
+}
+
+#main-block {
+    background: rgb(64, 247, 80);
+}

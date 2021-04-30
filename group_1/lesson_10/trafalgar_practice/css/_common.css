@@ -1,0 +1,24 @@
+
+/*
+* Common
+*/
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Mulish;
+  overflow: hidden auto;
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
