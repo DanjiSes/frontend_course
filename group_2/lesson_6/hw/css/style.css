@@ -1,0 +1,54 @@
+h1 {
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 70px;
+
+  text-align: center;
+
+  color: #272D4E;
+}
+
+.card {
+  width: 430px;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.card h3 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 70px;
+  color: #272D4E;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #94A2B3;
+}
+
+.card a {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #299EF3;
+  text-decoration: none;
+}
+
+.decor1, .decor2 {
+  position: absolute;
+  left: 0;
+}
+
+.decor1 {
+  left: -140px;
+  top: 45px;
+}
+
+.decor2 {
+  left: 55px;
+  top: 33px;
+}
