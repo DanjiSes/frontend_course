@@ -1,0 +1,120 @@
+/* 
+* Общие стили
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utils */
+
+.text-dark {
+  color: #444444;
+}
+
+.text-body {
+  color: #999999;
+}
+
+.text-lightdark {
+  color: #666666;
+}
+
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #444444;
+  margin: 16px 0 8px;
+}
+
+.link {
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration-line: underline;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Blocks */
+
+.main {
+  margin: 67px 0 127px;
+}
+
+.projects {
+  margin-bottom: 150px;
+}
+
+.works {
+  margin-bottom: 130px;
+}
+
+.exps .h2 {
+  margin-bottom: 25px;
+}
+
+/* Grid */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.col {
+  width: 100%;
+  max-width: 264px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 24px;
+}
+
