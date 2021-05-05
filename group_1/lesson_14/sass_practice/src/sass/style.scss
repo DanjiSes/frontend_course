@@ -1,0 +1,19 @@
+@import "varibales";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@import "blocks";
