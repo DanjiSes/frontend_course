@@ -1,0 +1,46 @@
+.title {
+  font-size: 48px;
+  line-height: 55px;
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 32px;
+  color: #7D7987;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+.text-sm {
+  font-size: 18px;
+  line-height: 30px
+}
+
+.text-xs {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.h2 {
+  font-size: 36px;
+  line-height: 56px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 33px;
+}
+
+.h2::after {
+  content: '';
+  display: inline-block;
+  width: 30%;
+  max-width: 56px;
+  background: #000;
+  height: 2px;
+}
