@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  padding: 64px 80px;
+  justify-content: space-between;
+  color: #fff;
+
+  &__nav {
+    
+    & > ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      & > li {
+        margin-right: 40px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: currentColor;
+    }
+  }
+
+  &__account {
+    img, span {
+      vertical-align: middle;
+    }
+
+    img {
+      margin-right: 8px;
+    }
+  }
+}

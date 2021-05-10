@@ -1,0 +1,11 @@
+@import "../../node_modules/normalize.css/normalize";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@import "blocks";

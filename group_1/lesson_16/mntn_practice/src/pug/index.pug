@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title MNTN
+    link(rel="stylesheet", href="../scss/style.scss")
+  body
+    //- Main
+    main.main(style="background-image: url(../img/BG.jpg)")
+      //- Header
+      header.header 
+        //- Logo
+        strong.header__logo MNTN
+        //- Nav
+        -
+          var nav = [
+            ['#', 'Equipment'],
+            ['#', 'About us'],
+            ['#', 'Blog']
+          ]
+
+        nav.header__nav
+          ul
+            each link in nav
+              li
+                a(href=link[0])=link[1]
+        
+        a.header__account
+          img(src="../img/account.svg", alt="")
+          span Account
+
+    script(src="../js/index.js") 
