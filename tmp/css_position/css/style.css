@@ -1,0 +1,19 @@
+.container {
+  background: #D5FAFC;
+  position: relative;
+  max-width: 800px;
+  border: 1px solid black;
+  padding: 100px;
+}
+
+.text {
+  height: 150px;
+  background: #9c9c9c;
+}
+
+.box-1, .box-2, .box-3 {
+  height: 350px;
+  width: 250px;
+  background: yellow;
+  margin: 30px;
+}
