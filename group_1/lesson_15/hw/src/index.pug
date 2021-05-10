@@ -1,0 +1,46 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Home Work lesson 15
+    link(rel="stylesheet", href="./sass/style.sass")
+  body
+    //- Heaer
+    header.header.text-white
+      .container
+        //- Title 
+        h1.h1 Some count that matters
+        //- Text
+        p Our achievement in the journey depicted in numbers  
+    section.stats
+      .container
+
+        -
+          var stats_items  = [
+            {
+              number: "40+",
+              name: "Happy Clients"
+            },
+            {
+              number: "540+",
+              name: "Projects Completed"
+            },
+            {
+              number: "300",
+              name: "Dedicated Members"
+            },
+            {
+              number: "25+",
+              name: "Awards Won"
+            },
+          ]
+        
+        each item in stats_items
+          p.stats__item
+            img.stats__item-bg(src="./img/stats_item_bg.svg")
+            b.stats__item-number=item.number
+            span.stats__item-name=item.name
+
+    script(src="./js/index.js") 
