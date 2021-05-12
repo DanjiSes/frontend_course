@@ -1,0 +1,34 @@
+.services__item {
+  width: 350px;
+  background: #FFFFFF;
+  box-shadow: 10px 40px 50px rgb(150 150 150);
+  border-radius: 20px;
+  padding: 45px 40px;
+}
+
+.services .text {
+  margin-bottom: 80px;
+}
+
+.services__item .text {
+  margin-bottom: 0;
+}
+
+.services__item-title {
+  font-size: 24px;
+  line-height: 56px;
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services__item {
+  margin-left: 17px;
+  margin-right: 17px;
+  margin-bottom: 34px;
+}
