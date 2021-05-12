@@ -1,0 +1,64 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bigSmallBig {
+  0% {
+    transform: scale(1);
+    border-radius: 50%;
+    background: yellow;
+  }
+
+  50% {
+    transform: scale(2);
+    border-radius: 0;
+    background: red;
+  }
+
+  100% {
+    transform: scale(0.5);
+    border-radius: 50%;
+    background: black;
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background: indigo;
+  margin: 100px;
+
+  animation: bigSmallBig 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,17 @@
+@import "../fonts/stylesheet.css";
+@import "../../node_modules/normalize.css/normalize";
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $main-font;
+  font-weight: 700;
+  color: $white;
+}
+
+@import "blocks";
+@import "utils";
