@@ -36,6 +36,44 @@
   object-fit: cover;
 }
 
+.js-slider {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-list {
+  order: 1;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.prev {
+  order: 2;
+}
+
+.slick-dots {
+  position: static;
+  order: 3;
+  width: auto;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.next {
+  order: 4;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}
+
+.slick-dots li button:before {
+  color: #5B9BF3 !important;
+}
+
 @media (max-width: 850px) {
   .reviews__item-content {
     display: block;
