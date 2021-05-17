@@ -1,0 +1,38 @@
+.parts {}
+
+.parts__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.parts__image {
+  width: 50%;
+}
+
+.parts__content {
+  width: 38%;
+}
+
+.parts__row:nth-child(2n) {
+  flex-direction: row-reverse;
+  padding-left: 8%;
+}
+
+@media (max-width: 850px) {
+  .parts__row {
+    /* flex-direction: column; */
+    display: block;
+    padding-left: 0 !important;
+  }
+
+  .parts__image {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .parts__content {
+    width: 100%;
+  }
+}

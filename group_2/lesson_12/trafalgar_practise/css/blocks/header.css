@@ -1,0 +1,92 @@
+/**
+* Шапка
+*/
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.header__nav > ul {
+  list-style: none;
+  display: flex;
+}
+
+.header__nav ul a {
+  color: #1F1534;
+  opacity: 0.5;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+.header__nav a:hover {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.mobile-nav__open {
+  color: #000;
+  font-size: 35px;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.mobile-nav__close {
+  color: #000;
+  font-size: 35px;
+  text-decoration: none;
+  opacity: 0.5;
+
+  display: inline-block;
+  transform: rotate(45deg);
+
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+@media (max-width: 850px) {
+  .header__nav {
+    width: 250px;
+    position: fixed;
+    background: #ffffff;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0, .7);
+    padding-top: 40px;
+
+    transition: transform .3s;
+    transform: translateX(100%);
+  }
+
+  .menu-open .header__nav {
+    transform: translateX(0);
+  }
+  
+  body {
+    transition: all .3s;
+  }
+
+  .menu-open {
+    margin-right: 250px;
+  }
+
+  .header__nav ul {
+    flex-direction: column;
+  }
+
+  .header__nav li {
+    margin-bottom: 20%;
+  }
+}
+
+@media (min-width: 850px) {
+  .mobile-nav__open, .mobile-nav__close {
+    display: none;
+  }
+}
