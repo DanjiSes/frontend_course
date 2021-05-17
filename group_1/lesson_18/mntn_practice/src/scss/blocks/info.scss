@@ -1,0 +1,44 @@
+body {
+  counter-reset: info;
+}
+
+.info {
+  padding: 100px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    padding-left: 150px;
+    margin-right: 115px;
+    position: relative;
+
+    &::before {
+      counter-increment: info;
+      content: "0"counter(info);
+      
+      font-weight: bold;
+      font-size: 240px;
+      line-height: 240px;
+
+      opacity: 0.1;
+
+      position: absolute;
+      left: 0;
+      top: -110px;
+    }
+  }
+
+  &:nth-child(even) {
+    .container {
+      flex-direction: row-reverse;
+    }
+
+    .info__content {
+      margin-right: 0;
+      margin-left: 115px;
+    }
+  }
+}
