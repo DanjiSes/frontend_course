@@ -410,6 +410,10 @@ body {
   padding: 0 20px;
 }
 
+.wow {
+  visibility: hidden;
+}
+
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -623,6 +627,10 @@ body {
 .info {
   padding: 100px 0;
 }
+.info .wow {
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
 .info .container {
   display: flex;
   align-items: center;
@@ -631,6 +639,7 @@ body {
   padding-left: 150px;
   margin-right: 115px;
   position: relative;
+  width: 60%;
 }
 .info__content::before {
   counter-increment: info;
@@ -642,6 +651,9 @@ body {
   position: absolute;
   left: 0;
   top: -110px;
+}
+.info__content__img {
+  width: 40%;
 }
 .info:nth-child(even) .container {
   flex-direction: row-reverse;

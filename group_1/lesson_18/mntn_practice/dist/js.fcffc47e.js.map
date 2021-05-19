@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"js.fcffc47e.js","sourceRoot":"..\\src\\pug","sourcesContent":[]}
+{"version":3,"sources":["../js/index.js"],"names":["WOW","init"],"mappings":"AAAA,IAAIA,GAAJ,GAAUC,IAAV","file":"js.fcffc47e.js","sourceRoot":"..\\src\\pug","sourcesContent":["new WOW().init();"]}
