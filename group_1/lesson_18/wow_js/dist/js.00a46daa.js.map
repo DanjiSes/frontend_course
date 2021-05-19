@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/index.js"],"names":["WOW","init"],"mappings":"AAAA;AAEA,IAAIA,GAAJ,GAAUC,IAAV","file":"js.00a46daa.js","sourceRoot":"..","sourcesContent":["// alert('JS подключен')\r\n\r\nnew WOW().init();"]}
