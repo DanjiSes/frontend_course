@@ -1,0 +1,33 @@
+.main {
+  position: relative;
+
+  .header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &__social {
+    position: absolute;
+    left: 40px;
+    top: 300px;
+  }
+
+  &__content {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 300px;
+    right: 40px;
+  }
+
+  &__bg {
+    width: 100%;
+    height: auto;
+  }
+}

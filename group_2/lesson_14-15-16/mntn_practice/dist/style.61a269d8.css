@@ -1,0 +1,11 @@
+body {
+  color: red;
+}
+
+@media (max-width: 1220px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+/*# sourceMappingURL=/style.61a269d8.css.map */

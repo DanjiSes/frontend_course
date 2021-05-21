@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title MNTN project
+
+    link(rel="stylesheet", href="../static/sass/style.scss")
+  body
+
+    //- Main
+    main.main
+      //- Header
+      include blocks/header.pug
+
+      .main__content
+        label.main__label A Hiking guide
+        h1.main__title Be prepared for the Mountains and beyond!
+        a(href="#").main__link
+          span scroll down
+          img(src="../static/img/icons/arrow_down.svg", alt="")
+      
+      .main__social
+        strong Follow us
+        a(href="#")
+          img(src="../static/img/icons/instagram.svg", alt="")
+        a(href="#")
+          img(src="../static/img/icons/twitter.svg", alt="")
+      
+      nav.main__nav
+        ul
+          li
+            a(href="") Start
+          li
+            a(href="") 1
+          li
+            a(href="") 2
+          li
+            a(href="") 3
+
+      //- Background
+      img.main__bg(src="../static/img/BG.jpg", alt="")
+
+
+
+    script(src="../static/js/index.js") 

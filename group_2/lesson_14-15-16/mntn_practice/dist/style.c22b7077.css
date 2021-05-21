@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy-Extrabold.915def17.woff2') format('woff2'),
+        url('/Gilroy-Extrabold.3feebb44.woff') format('woff'),
+        url('/Gilroy-Extrabold.89b864ff.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy-Bold.b1779a6b.woff2') format('woff2'),
+        url('/Gilroy-Bold.b50bab1d.woff') format('woff'),
+        url('/Gilroy-Bold.94f5fdbe.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('/ChronicleDisplay-Semi.16465ded.woff2') format('woff2'),
+        url('/ChronicleDisplay-Semi.7ebd2ab0.woff') format('woff'),
+        url('/ChronicleDisplay-Semi.a22a986e.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/Gilroy-Medium.6879a385.woff2') format('woff2'),
+        url('/Gilroy-Medium.c672b841.woff') format('woff'),
+        url('/Gilroy-Medium.a3dc2521.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('/ChronicleDisplay-Bold.704fc740.woff2') format('woff2'),
+        url('/ChronicleDisplay-Bold.ff00b609.woff') format('woff'),
+        url('/ChronicleDisplay-Bold.69a16ae8.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+  font-family: "Gilroy", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.main {
+  position: relative;
+}
+.main .header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.main__social {
+  position: absolute;
+  left: 40px;
+  top: 300px;
+}
+.main__content {
+  position: absolute;
+  left: 100px;
+  top: 300px;
+}
+.main__nav {
+  position: absolute;
+  top: 300px;
+  right: 40px;
+}
+.main__bg {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=/style.c22b7077.css.map */

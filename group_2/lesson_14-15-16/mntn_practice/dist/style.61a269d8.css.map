@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\static\\sass\\style.sass"],"names":[],"mappings":"AAAA;EACE;;;AAEF;EAEE;IACE","file":"style.61a269d8.css","sourceRoot":"..\\src\\pug","sourcesContent":["body\r\n  color: red\r\n\r\n@media ( max-width: 1220px )\r\n  \r\n  .container\r\n    max-width: 600px"]}

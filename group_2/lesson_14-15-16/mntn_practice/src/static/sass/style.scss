@@ -1,0 +1,14 @@
+// Fonts
+@import "../fonts/stylesheet.css";
+
+// Vars
+@import "variables";
+
+// Common
+body {
+  font-family: $main-font;
+  margin: 0;
+}
+
+// Blocks
+@import "blocks";
