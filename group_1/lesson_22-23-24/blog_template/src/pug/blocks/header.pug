@@ -1,0 +1,27 @@
+//- TODO: Адаптив
+
+-
+  var menu = [
+    { name: "Home", link: "#home"},
+    { name: "About", link: "#about"},
+    { name: "Blog", link: "#blog"},
+  ]
+
+- var currentPageLink = '#home'
+
+header.header
+  a.nav__open(href="#menu")
+    img(src="img/menu-open.svg", alt="") 
+  nav.nav#menu
+    a(href="#close").nav__close
+      img(src="img/menu-close.svg", alt="")
+    ul
+      each item in menu
+
+        if item.link == currentPageLink
+          - var isActive = 'active'
+        else
+          - var isActive = ''
+
+        li
+          a(href=item.link, class=isActive)=item.name
