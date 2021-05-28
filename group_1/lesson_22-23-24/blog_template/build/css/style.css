@@ -38,6 +38,11 @@ hr {
     background: #fff;
     border-radius: 50%; }
 
+.container {
+  max-width: 585px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
 .header {
   padding: 45px 1rem;
   display: flex;
