@@ -4,6 +4,7 @@ const nunjucks = require('gulp-nunjucks');
 const less = require('gulp-less');
 const clean = require('gulp-clean');
 const browserSync = require('browser-sync').create();
+const pug = require('gulp-pug');
 
 function html() {
   return src('./src/html/*.njk')
@@ -11,6 +12,13 @@ function html() {
          .pipe(rename({
            extname: '.html'
          }))
+         .pipe(dest('./build'))
+         .on('end', browserSync.reload);
+}
+
+function htmlPug() {
+  return src('./src/pug/*.pug')
+         .pipe(pug())
          .pipe(dest('./build'))
          .on('end', browserSync.reload);
 }
@@ -56,6 +64,7 @@ function watchFiles() {
 }
 
 exports.html = html
+exports.htmlPug = htmlPug
 exports.styles = styles
 exports.images = images
 exports.fonts = fonts
@@ -63,4 +72,4 @@ exports.cleanBuild = cleanBuild
 exports.serve = serve
 exports.watchFiles = watchFiles
 
-exports.default = series(cleanBuild, parallel(html, styles, images, fonts), parallel(watchFiles, serve));
+exports.default = series(cleanBuild, parallel(htmlPug, styles, images, fonts), parallel(watchFiles, serve));
