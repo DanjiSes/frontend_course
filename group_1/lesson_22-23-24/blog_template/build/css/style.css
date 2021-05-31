@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 16px; }
 
@@ -212,6 +215,25 @@ hr {
   outline: none; }
   .form-control:focus {
     border: 1px solid #3F51B5; }
+
+button {
+  cursor: pointer; }
+
+.btn {
+  padding: 11px 30px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  font-size: 16px;
+  line-height: 149%;
+  font-family: "Roboto Mono", monospace;
+  transition: background .1s; }
+
+.btn-primary {
+  background: #1A1A1A;
+  color: #fff; }
+  .btn-primary:hover {
+    background: #3F51B5; }
 
 .h1 {
   font-size: 26px;
