@@ -19,7 +19,7 @@ function html() {
 
 function htmlPug() {
   return src('./src/pug/*.pug')
-         .pipe(pug())
+         .pipe(pug({ pretty: true }))
          .pipe(dest('./build'))
          .on('end', browserSync.reload);
 }
