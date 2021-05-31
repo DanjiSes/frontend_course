@@ -44,4 +44,34 @@ block content
             a(href=link.link)
               img(src="img/"+link.img, alt="")
 
+    h2.h2 Join the Conversation
+
+    h3 Leave a Reply
+    p(style="max-width: 400px") Your email address will not be published. Required fields are marked *
+
+    form(action="")
+
+      .form-item
+        label Comment
+        textarea.form-control(rows="5")
+
+      .form-item
+        label Name *
+        input(type="text").form-control
+
+      .form-item
+        label Email *
+        input(type="text").form-control
+
+      .form-item
+        label Website
+        input(type="text").form-control
+      
+      .form-item 
+       label
+        input(type="checkbox")
+        span Save my name, email, and website in this browser for the next time I comment.
+      
+      button(type="submit") Post Comment
+
 block scripts
