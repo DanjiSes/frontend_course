@@ -27,9 +27,11 @@ let _answers;
 let _buttons;
 let _result;
 
-startLevel()
+// startLevel()
 
 function startLevel() {
+  document.querySelector('.btn-dark').style.display = 'none'
+
   document.getElementsByTagName('h1')[0].innerHTML = `Level ${level}`
   document.getElementById('result').innerHTML = ''
   let allBtnsEl = document.querySelectorAll('.btn-success, .btn-danger')
@@ -41,22 +43,48 @@ function startLevel() {
     btnEl.classList.add('btn-primary')
   }
 
-  // Вывод вопроса и вариантов ответа
-  let num1 = Math.floor(Math.random() * 100) + 100
-  let num2 = Math.floor(Math.random() * 100) + 100
+  let difficultLevel = (Math.floor(level / 2) + 1) * 3
+  console.log(difficultLevel)
 
-  let operators = ["+", "-", "*"]
+  // Вывод вопроса и вариантов ответа
+  let num1 = Math.floor(Math.random() * 10 * difficultLevel) + 10 * difficultLevel
+  let num2 = Math.floor(Math.random() * 10 * difficultLevel) + 10 * difficultLevel
+
+  let operators = ["+"] // , "-", "*", "/", "%", "**"
+
+  if (level > 3) {
+    operators.push('-')
+  }
+
+  if (level > 5) {
+    operators.push('*')
+  }
+
+  if (level > 10) {
+    operators.push('/')
+    operators.push('%')
+  }
+
+  if (level > 20) {
+    operators.push('**')
+  }
+
   let operator = operators[Math.floor(Math.random() * operators.length)]
 
   let realResult; // undefined
 
-  
   if (operator == '+') {
     realResult = num1 + num2
   } else if (operator == '-') {
     realResult = num1 - num2
   } else if (operator == '*') {
     realResult = num1 * num2
+  } else if (operator == '/') {
+    realResult = Math.round(num1 / num2)
+  } else if (operator == '%') {
+    realResult = num1 % num2
+  } else if (operator == '**') {
+    realResult = num1 ** num2
   }
 
   // Работа с деревом DOM
@@ -70,7 +98,7 @@ function startLevel() {
   let answ2 = realResult
   let answ3 = Math.floor(Math.random() * (realResult + 5)) + (realResult - 5)
 
-  let answers = [answ1, answ2, answ3].sort(() => Math.random() - 0.5) // (!)
+  let answers = [answ1, answ2, answ3] //.sort(() => Math.random() - 0.5) // (!)
   // Стрелочные функции. Функции массива.
 
   buttonsEl[0].innerHTML = answers[0]
@@ -146,7 +174,9 @@ function checkAnswer(n) {
     progressEl.style.width = '0%'
 
     level = 1
-    window.setTimeout(startLevel, 500)
+    // window.setTimeout(startLevel, 500)
+
+    document.querySelector('.btn-dark').style.display = 'block'
   }
 
   // 1. Получить вариант ответа
