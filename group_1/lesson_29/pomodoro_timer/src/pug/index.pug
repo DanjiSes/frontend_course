@@ -1,0 +1,17 @@
+extends templates/main
+
+block variables
+  - var title = 'Pomodoro Timer'
+
+block content
+  //- Title
+  h1 Pomodoro Timer
+
+  //- Timer
+  p.timer(style="font-size: 30px")
+    span.min 25
+    span :
+    span.sec 00
+
+  //- Start button
+  button.js-start Start
