@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'SF Pro Display', 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.bg-red, .bg-blue {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  transition: all 1s; }
+
+.bg-red {
+  background: linear-gradient(90deg, #F78CA0 0%, #F9748F 20.31%, #FD868C 66.67%, #FE9A8B 100%), #FFFFFF; }
+
+.bg-blue {
+  background: linear-gradient(180deg, #48C6EF 0%, #6F86D6 100%), linear-gradient(90deg, #F78CA0 0%, #F9748F 20.31%, #FD868C 66.67%, #FE9A8B 100%), #FFFFFF; }
+
+.timer {
+  position: relative;
+  margin-bottom: 60px; }
+  .timer__progress {
+    position: relative; }
+    .timer__progress #progress {
+      transform: rotate(-90deg);
+      position: absolute;
+      left: 0;
+      top: 0; }
+      .timer__progress #progress circle {
+        transition: all 1s linear; }
+  .timer__time {
+    color: #FAFAFA;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 72px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+
+button {
+  cursor: pointer; }
+
+.btn {
+  background: none;
+  padding: 20px 40px;
+  color: #fff;
+  border: 1px solid #fafafa;
+  border-radius: 300px;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px; }
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.2); }
+  .btn:active {
+    background: rgba(255, 255, 255, 0.4); }
+
+.controls .btn {
+  margin-left: 15px;
+  margin-right: 15px; }
