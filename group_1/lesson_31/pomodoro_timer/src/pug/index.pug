@@ -54,16 +54,16 @@ block content
       form.settings-form.js-settingsForm(action="/")
         .form-group
           label Pomodoro
-          input.form-control(type="number", value="")
+          input#pomodoro.form-control(type="number", value="")
         .form-group
           label Shork Break
-          input.form-control(type="number", value="")
+          input#short-break.form-control(type="number", value="")
         .form-group
           label Long Break
-          input.form-control(type="number", value="")
+          input#long-break.form-control(type="number", value="")
         .form-group
           label Number of pomodoro between long break
-          input.form-control(type="number", value="")
+          input#period.form-control(type="number", value="")
         
         .controls
           button(type="button").btn.js-modalHide Close

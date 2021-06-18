@@ -4,10 +4,10 @@ $(function () {
    */
 
   let intervalId;             // айди итервала
-  let pomodoroLength = 25 * 60 // длина помидорки в секундах
-  let shortBreakLength = 5 * 60 // длинна короткого перерыва
-  let logBrackLength = 15 * 60 // длинна большего перерыва
-  let longBrackPeriud = 4 // количество помидорок до длиного перерыва
+  let pomodoroLength = localStorage.getItem('pl') || 25 * 60 // длина помидорки в секундах
+  let shortBreakLength = localStorage.getItem('sb') || 5 * 60 // длинна короткого перерыва
+  let longBrackLength = localStorage.getItem('lb') || 15 * 60 // длинна большего перерыва
+  let longBrackPeriud = localStorage.getItem('p') || 4 // количество помидорок до длиного перерыва
   let time = pomodoroLength // текущее время в секундах
   let currentState = ['p', 'b']
   let pomodoroCount = 0 // количество пройденных помидоров
@@ -17,8 +17,6 @@ $(function () {
    */
 
   function play() {
-    console.log('Текущийй помидор: ', pomodoroCount)
-
     $('#progress circle').css('transition', 'all 1s linear')
 
     // проверка на то закончилось время или нет
@@ -42,7 +40,7 @@ $(function () {
         // то в переменную time записываем longBrackPeriud
 
         if (pomodoroCount % longBrackPeriud === 0) {
-          time = logBrackLength
+          time = longBrackLength
         } else {
           time = shortBreakLength
         }
@@ -64,7 +62,7 @@ $(function () {
     let allTime
 
     if (currentState[0] === 'p') allTime = pomodoroLength
-    if (currentState[0] === 'b' && pomodoroCount % longBrackPeriud === 0) allTime = logBrackLength
+    if (currentState[0] === 'b' && pomodoroCount % longBrackPeriud === 0) allTime = longBrackLength
     if (currentState[0] === 'b' && pomodoroCount % longBrackPeriud !== 0) allTime = shortBreakLength
 
     let progress = (time / allTime) * 880
@@ -124,11 +122,50 @@ $(function () {
 
   $('.settings-btn').on('click', function() {
     $('.modal').addClass('show')
-    $('.js-pause').click()
+    if ($('.js-pause').css('display') !== 'none') {
+      $('.js-pause').click()
+    }
   })
 
   $('.js-modalHide, .modal-overlay').on('click', function() {
     $('.modal').removeClass('show')
   })
 
+  // Settings form
+
+  $('#pomodoro').val(pomodoroLength / 60)
+  $('#short-break').val(shortBreakLength / 60)
+  $('#long-break').val(longBrackLength / 60)
+  $('#period').val(longBrackPeriud)
+
+  $('.js-settingsForm').on('submit', function(event) {
+    event.preventDefault()
+
+    // 1. Получить все value из наших инпутов
+    let pomodoro = $('#pomodoro').val()
+    let shortBreak = $('#short-break').val()
+    let longBreak = $('#long-break').val()
+    let period = $('#period').val()
+
+    // ПРОВЕРИТЬ ВСЕ ЗНАЧЕНИЯ
+
+    // 2. Записать эти значения в наши переменные
+
+    pomodoroLength = pomodoro * 60
+    shortBreakLength = shortBreak * 60
+    longBrackLength = longBreak * 60
+    longBrackPeriud = period
+    time = pomodoroLength
+
+    localStorage.setItem('pl', pomodoroLength)
+    localStorage.setItem('sb', shortBreakLength)
+    localStorage.setItem('lb', longBrackLength)
+    localStorage.setItem('p', longBrackPeriud)
+
+    // 3. Перезапустить таймер
+    play()
+
+    // Убрать модалку
+    $('.modal').removeClass('show')
+  })
 });

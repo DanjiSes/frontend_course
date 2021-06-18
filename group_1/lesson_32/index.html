@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beep</title>
+</head>
+<body>
+  <!-- <button id="btn" onclick="document.getElementById('audio').play()">Beep</button> -->
+
+  <audio controls id="audio" style="display: none;">
+    <source src="din-iphone.mp3" type="audio/mpeg">
+    Тег audio не поддерживается вашим браузером. 
+    <a href="din-iphone.mp3">Скачайте музыку</a>.
+  </audio>
+
+  <script>
+    document.getElementById('audio').play()
+  </script>
+</body>
+</html>
