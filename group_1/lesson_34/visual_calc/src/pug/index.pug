@@ -1,0 +1,29 @@
+extends templates/main
+
+block variables
+  - var title = 'Калькулятор-визуализатор'
+
+block content
+  .container
+    
+    .calc
+
+      .calc__preview
+        img.calc-capter(src="img/carpet/romb/01.png")
+        img.calc-border(src="img/border/b (1).png")
+
+      .calc__form
+        .form-control
+          label Выберите цвет коврика
+          each i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+            input(type="radio", name="color", value=i)
+        .form-control
+          label Выберите цвет канта
+          each i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            input(type="radio", name="border-color", value=i)
+        .form-control
+          label Шильдик
+          input(type="checkbox", name="dop1")
+          span  + 500 сом
+      
+      h1.sum Итого: 5000 сом

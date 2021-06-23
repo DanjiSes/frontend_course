@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+.container {
+  max-width: 500px;
+  margin: 0 auto; }
+
+label {
+  display: block;
+  margin-bottom: 5px; }
+
+.calc {
+  border: 3px solid yellow;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 20px; }
+  .calc__preview {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative; }
+    .calc__preview img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 0; }
+      .calc__preview img:first-child {
+        position: static; }

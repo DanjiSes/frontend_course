@@ -1,0 +1,29 @@
+@import "variables";
+@import "common";
+@import "utils";
+
+.calc {
+  border: 3px solid yellow;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 20px;
+
+  &__preview {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      &:first-child {
+        position: static;
+      }
+    }
+  }
+}
