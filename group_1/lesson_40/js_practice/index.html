@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love JS</title>
+</head>
+
+<body>
+  My javascript practice
+
+  <script>
+    /**
+    * Задание №1
+    * Создать массив из 10 объектов вида { name: 'String' }
+    * Написать функцию search которая будет принимать массив
+    * и строку search(arr, 'some') и возвращать массив с элементами
+    * у которых name содержит строку 'some'
+    */
+
+    // Подсказка:
+    // Можно использовать цикл
+    // Или можно использовать .sort
+    // Пригодится if и функция indexOf
+    // Еще для улучшения можно все строки приводить к нижнему регистру
+    // ''.toLowercase()
+
+    let users = [
+      { name: 'Danil' },
+      // ....
+      { name: 'Alex' }
+    ]
+
+    function search(arr, text) {
+      let result = []
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name.toLocaleLowerCase().indexOf(text.toLocaleLowerCase()) >= 0) {
+          result.push(arr[i])
+        }
+      }
+
+      return result
+    }
+
+    console.log(search(users, 'alex')) // [{ name: 'Danil' }]
+
+    /**
+    * Задание №2
+    * Написать функцию которая принимает два массива
+    * compare(arr1, arr2) и сравнивает каждый элемент массива
+    * Если все элементы равны то возвращает true если нет false
+    */
+
+    function compare(arr1, arr2) {
+      return arr1 == arr2
+    }
+
+    let result1 = compare([1,2,3], [1,2,3]) // true
+    let result2 = compare([1,2,33], [1,2,31]) // false
+    let result3 = compare([1,2,3], [1]) // false
+  </script>
+</body>
+
+</html>

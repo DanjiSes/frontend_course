@@ -63,6 +63,8 @@ function App() {
             Не выполненные
           </button>
         </div>
+        {/* Search */}
+        <input type="text" className="form-control mb-4" placeholder="Поиск..." />
         {/* Todo List */}
         <TodoList tasks={filterredTasks} deleteTodo={deleteTodo} toggleDone={toggleDone} />
         {/* Add Todo Form */}
