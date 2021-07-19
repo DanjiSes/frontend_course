@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let state = [
+      { id: 1, name: "Danil" },
+      { id: 2, name: "Sasha" },
+      { id: 3, name: "Katya" },
+      { id: 4, name: "John" },
+      { id: 5, name: "Misha" },
+      { id: 6, name: "Evgeniy" },
+      { id: 7, name: "Valera" },
+    ]
+
+    let lastId = 7
+
+    function search(query) {
+      return state.filter(user => user.name.toLowerCase().indexOf(query.toLowerCase()) >= 0)
+    }
+
+    console.log(search('jonh'))
+
+    function add(name) {
+      state.push({
+        id: ++lastId,
+        name: name
+      })
+    }
+
+    add('Anton')
+    console.log(state) // { id: 9, name: "Anton" }
+
+    function remove(id) {
+      let index = state.findIndex(user => user.id === id)
+      state = [...state.slice(0, index), ...state.slice(index + 1)]
+    }
+
+    remove(1)
+    console.log(state)
+
+    function edit(id, name) {
+      let index = state.findIndex(user => user.id === id)
+
+      state = [
+        ...state.slice(0, index),
+        { id: id, name: name },
+        ...state.slice(index + 1)
+      ]
+
+      // state = state.map(function(user) {
+      //   if (user.id === id) {
+      //     return { id: id, name: name }
+      //   }
+
+      //   return user
+      // })
+    }
+
+    edit(8, 'SUPER MAN')
+    console.log(state)
+  </script>
+</body>
+
+</html>
