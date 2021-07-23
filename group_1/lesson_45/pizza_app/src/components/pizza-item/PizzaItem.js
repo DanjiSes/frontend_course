@@ -1,8 +1,11 @@
 
-function PizzaItem() {
+function PizzaItem(props) {
+  const { data } = props
+
   return (
     <div className="PizzaItem">
-      PizzaItem
+      <img src={data.image} />
+      {data.name}
       <button>+ Добавить</button>
     </div>
   )

@@ -46,7 +46,7 @@ const PIZZAS = [
     name: 'Сырный цыпленок',
     price: 385,
   },
-].map((p, idx) => ({...p, image: require(`../images/pizzas/${idx+1 > 9 ? idx+1 : '0'+(idx+1)}.png`)}))
+].map((p, idx) => ({...p, image: require(`../images/pizzas/${idx+1 > 9 ? idx+1 : '0'+(idx+1)}.png`).default}))
 
 export const api = {
   getPizzas() {
