@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #F1F3F6;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 30px;
+
+  max-width: 475px;
+
+  padding: 40px 30px 30px;
+
+  text-align: center;
+}
+
+.card__avatar {
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.card__label {
+  display: block;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  background: #EEF7FE;
+  border-radius: 5px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card__name {
+  font-size: 18px;
+  line-height: 21px;
+  color: #22215B;
+  margin: 20px 0 5px 0;
+}
+
+.card__role {
+  font-size: 15px;
+  line-height: 18px;
+  color: #22215B;
+  margin-bottom: 10px;
+}
+
+.card__desc {
+  color: rgba(34, 33, 91, 0.6);
+  margin-bottom: 35px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 0 auto 44px auto;
+}
+
+.btn-group {
+  display: flex;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.btn-group > .btn {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.btn {
+  padding: 24px;
+  border-radius: 16px;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #22215B;
+  color: #fff;
+  border: 2px solid #2F2E65;
+  box-shadow: 0 0 0 #5d5bc2;
+  transition: box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  box-shadow: 5px 5px 0 #5d5bc2;
+}
+
+.btn-primary:active {
+  background: #383783;
+}
+
+.btn-outline-primary {
+  background: #fff;
+  color: #22215B;
+  border: 2px solid #2F2E65;
+  transition: box-shadow .3s;
+}
+
+.btn-outline-primary:hover {
+  box-shadow: 0 0 20px #5d5bc2;
+}
+
+.btn-outline-primary:active {
+  background: #3837833d;
+}
