@@ -1,7 +1,11 @@
+import { Header } from "./components/header/Header";
+import { PizzaList } from "./components/pizza-list/PizzaList";
+
 function App() {
   return (
     <div className="App">
-      My own react pizza app
+      <Header />
+      <PizzaList />
     </div>
   );
 }
