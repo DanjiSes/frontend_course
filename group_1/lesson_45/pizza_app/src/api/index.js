@@ -61,7 +61,7 @@ export const api = {
         reject({
           error: ERR_500
         })
-      }, Math.floor(Math.random() * 3))
+      }, Math.floor(Math.random() * 3) * 1000)
     })
   }
 }
