@@ -1,4 +1,7 @@
+import { api } from "../../api"
 import { PizzaItem } from "../pizza-item/PizzaItem"
+
+api.getPizzas().then(console.log)
 
 function PizzaList() {
   return (

@@ -46,13 +46,13 @@ const PIZZAS = [
     name: 'Сырный цыпленок',
     price: 385,
   },
-].map((p, idx) => ({...p, image: require(`../images/pizzas/${idx+1 > 9 ? idx+1 : '0'+(idx+1)}`)}))
+].map((p, idx) => ({...p, image: require(`../images/pizzas/${idx+1 > 9 ? idx+1 : '0'+(idx+1)}.png`)}))
 
 export const api = {
   getPizzas() {
     return new Promise(function(resolve, reject) {
       setTimeout(() => {
-        if (Math.random() > 0.7) {
+        if (Math.random() > 0.2) {
           resolve({
             pizzas: PIZZAS
           })
