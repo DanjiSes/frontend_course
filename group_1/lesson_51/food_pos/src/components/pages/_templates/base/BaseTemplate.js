@@ -1,3 +1,4 @@
+import MainSidebar from "../../../blocks/main-sidebar/MainSidebar"
 
 function BaseTemplate(props) {
   return (
@@ -5,9 +6,11 @@ function BaseTemplate(props) {
       {/* Sidebar */}
       <MainSidebar />
       {/* Page content */}
-      <div class="template-base__content">
+      <div class="content">
         { props.children }
       </div>
     </div>
   )
 }
+
+export default BaseTemplate
