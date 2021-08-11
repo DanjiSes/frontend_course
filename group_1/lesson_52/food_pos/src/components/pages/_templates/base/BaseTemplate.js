@@ -6,7 +6,7 @@ function BaseTemplate(props) {
       {/* Sidebar */}
       <MainSidebar />
       {/* Page content */}
-      <div class="content">
+      <div className="content">
         { props.children }
       </div>
     </div>

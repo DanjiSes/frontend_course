@@ -9,7 +9,7 @@ function Input(props) {
   } = props
 
   return (
-    <label class={`Input ${icon ? 'with-icon' : ''} ${className}`}>
+    <label className={`Input ${icon ? 'with-icon' : ''} ${className}`}>
       <input
         className="form-control"
         type={type}

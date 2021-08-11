@@ -47,7 +47,7 @@ function MainSidebar() {
         </ul>
       </nav>
       {/* Bottom nav */}
-      <nav class="main-nav">
+      <nav className="main-nav">
         <ul>
           <li>
             <span>

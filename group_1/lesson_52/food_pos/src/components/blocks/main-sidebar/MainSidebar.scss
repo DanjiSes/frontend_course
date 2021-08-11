@@ -36,7 +36,7 @@
       font-size: 19px;
       color: $primary;
       border-radius: 12px 0 0 12px;
-      transition: background .3s, box-shadow .3s;
+      // transition: background .3s, box-shadow .3s;
 
       i {
         display: block;
@@ -49,6 +49,28 @@
 
       &.active {
         background: $dark;
+        position: relative;
+        
+        &:before, &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background: $dark2;
+          border-radius: 50%;
+          box-shadow: 5px 5px 0 $dark;
+
+          top: -20px;
+          right: 0;
+        }
+
+        &:after {
+          bottom: -20px;
+          top: unset;
+          right: 0;
+          box-shadow: 5px -5px 0 $dark;
+        }
 
         i {
           background: $primary;
