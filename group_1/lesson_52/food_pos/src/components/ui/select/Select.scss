@@ -1,0 +1,40 @@
+.Select {
+  display: block;
+  position: relative;
+  max-width: max-content;
+  font-size: 14px;
+  line-height: 1.4;
+
+  &.with-icon {
+
+    & > [class^='icon-'] {
+      position: absolute;
+      font-size: 19px;
+      left: 14px;
+      top: 14px;
+    }
+
+    .form-control {
+      padding-left: 42px;
+
+      &:focus + [class^='icon-'] {
+        opacity: .3;
+      }
+    }
+  }
+}
+
+.form-control {
+  padding: 14px;
+  border-radius: 8px;
+  background: #2D303E;
+  color: #ABBBC2;
+  border: 1px solid #393C49;
+  display: block;
+  color: #fff;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 15px rgba(#fff, .1);
+  }
+}

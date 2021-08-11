@@ -4,7 +4,7 @@ import "./Tabs.scss"
 let prevAcitveButton;
 
 function Tabs(props) {
-  let { value, onChange } = props
+  let { value, onChange, className, ...rest } = props
 
   let activeButtonRev = useRef()
   let [lineLeft, setLineLeft] = useState(
@@ -30,7 +30,7 @@ function Tabs(props) {
   }, [value])
 
   return (
-    <div className="Tabs">
+    <div className={`Tabs ${className}`} {...rest}>
       {props.children.map((Tab, idx) => (
         React.cloneElement(Tab, {
           active: idx === value,

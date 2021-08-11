@@ -21,7 +21,7 @@ function HomePage() {
           </div>
         </div>
         {/* Tabs */}
-        <Tabs value={activeTab} onChange={(idx) => setActiveTab(idx)}>
+        <Tabs className="mb-3" value={activeTab} onChange={(idx) => setActiveTab(idx)}>
           <TabItem label="Hot Dishes" />
           <TabItem label="Cold Dishes" />
           <TabItem label="Soup" />
@@ -29,6 +29,19 @@ function HomePage() {
           <TabItem label="Appetizer" />
           <TabItem label="Dessert" />
         </Tabs>
+        {/* Products */}
+        <div className="row">
+          <div className="col-6">
+            Products
+          </div>
+          <div className="col-6">
+            <select>
+              <option>Select 1</option>
+              <option>Select 2</option>
+              <option>Select 3</option>
+            </select>
+          </div>
+        </div>
       </div>
     </BaseTemplate>
   )
