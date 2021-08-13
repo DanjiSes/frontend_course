@@ -1,23 +1,32 @@
-import "./Input.scss";
+import "./Select.scss";
 
-function Input(props) {
+/**
+ * TODO:
+ * 1. Гибкость (чтобы можно было передавать опции селекта)
+ * 2. При клике на опцию менялся value
+ * 3. Чтобы опции открывались при клике на селект и закрывались при клике на любое свободное пространство
+ */
+
+function Select(props) {
   const {
-    type = 'text',
     className = '',
-    icon = null,
     ...rest
   } = props
 
   return (
-    <label className={`Select ${icon ? 'with-icon' : ''} ${className}`}>
-      <input
-        className="form-control"
-        type={type}
-        {...rest}
-        />
-        {icon && <i className={`icon-${icon}`} />}
-    </label>
+    <div className={`Select ${className}`} {...rest}>
+      <div className="Select__value form-control">
+        <i className="icon-Arrow---Down" />
+        <span>Delivery</span>
+      </div>
+
+      <div className="Select__dropdown">
+        <div className="Select__option Select__option_disable">Dine in</div>
+        <div className="Select__option">To Go</div>
+        <div className="Select__option Select__option_active">Delivery</div>
+      </div>
+    </div>
   )
 }
 
-export { Input }
+export { Select }

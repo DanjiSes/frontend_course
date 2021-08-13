@@ -1,5 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { ProductCard } from "../../blocks/product-cart/ProductCart";
 import { Input } from "../../ui/input/Input";
+import { Select } from "../../ui/select/Select";
 import { Tabs } from "../../ui/tabs/Tabs";
 import BaseTemplate from "../_templates/base/BaseTemplate";
 const {TabItem} = Tabs
@@ -35,12 +37,62 @@ function HomePage() {
             Products
           </div>
           <div className="col-6">
-            <select>
-              <option>Select 1</option>
-              <option>Select 2</option>
-              <option>Select 3</option>
-            </select>
+            <Select className="ml-auto" />
+            {/* 
+            То как должен выглядить селект
+            <Select defaultValue="lucy" onChange={handleChange}>  
+              <Option value="jack">Jack</Option>
+              <Option value="lucy">Lucy</Option>
+              <Option value="disabled" disabled>
+                Disabled
+              </Option>
+              <Option value="Yiminghe">yiminghe</Option>
+            </Select>
+            */}
           </div>
+        </div>
+        <div className="row">
+          {[
+              {
+                id: '15',
+                image: 'https://picsum.photos/100/100',
+                name: 'Spicy seasoned seafood noodles',
+                price: 2.29,
+                avaliable_count: 20
+              },
+              {
+                id: '10',
+                image: 'https://picsum.photos/100/100',
+                name: 'Spicy seasoned seafood noodles',
+                price: 2.29,
+                avaliable_count: 20
+              },
+              {
+                id: '11',
+                image: 'https://picsum.photos/100/100',
+                name: 'Spicy seasoned seafood noodles',
+                price: 2.29,
+                avaliable_count: 20
+              },
+              {
+                id: '12',
+                image: 'https://picsum.photos/100/100',
+                name: 'Spicy seasoned seafood noodles',
+                price: 2.29,
+                avaliable_count: 20
+              },
+              {
+                id: '13',
+                image: 'https://picsum.photos/100/100',
+                name: 'Spicy seasoned seafood noodles',
+                price: 2.29,
+                avaliable_count: 20
+              },
+            ].map(product => (
+              <div className="col-4">
+                <ProductCard data={product} key={product.id} />
+              </div>
+            ))}
         </div>
       </div>
     </BaseTemplate>

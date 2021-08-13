@@ -5,36 +5,48 @@
   font-size: 14px;
   line-height: 1.4;
 
-  &.with-icon {
+  &__value > [class^='icon-'] {
+    position: absolute;
+    font-size: 19px;
+    left: 14px;
+    top: 14px;
+  }
 
-    & > [class^='icon-'] {
-      position: absolute;
-      font-size: 19px;
-      left: 14px;
-      top: 14px;
-    }
+  .form-control {
+    padding-left: 42px;
 
-    .form-control {
-      padding-left: 42px;
-
-      &:focus + [class^='icon-'] {
-        opacity: .3;
-      }
+    &:focus + [class^='icon-'] {
+      opacity: .3;
     }
   }
-}
 
-.form-control {
-  padding: 14px;
-  border-radius: 8px;
-  background: #2D303E;
-  color: #ABBBC2;
-  border: 1px solid #393C49;
-  display: block;
-  color: #fff;
-  outline: none;
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background: #252836;
+    border: 1px solid #393C49;
+    border-radius: 8px;
+    padding: 4px 0;
+  }
 
-  &:focus {
-    box-shadow: 0 0 15px rgba(#fff, .1);
+  &__option {
+    padding: 8px 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(#fff, 0.1);
+    }
+
+    &_active {
+      background: rgba(#fff, 0.3);
+    }
+
+    &_disable {
+      opacity: .5;
+      background: none !important;
+      cursor: no-drop;
+    }
   }
 }
