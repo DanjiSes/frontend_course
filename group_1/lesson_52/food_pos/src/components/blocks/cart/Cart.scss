@@ -1,0 +1,17 @@
+.Cart {
+    background: #1F1D2B;
+    width: 400px;
+    padding: 24px;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.CartProducts__list {
+    width: 100%;
+}

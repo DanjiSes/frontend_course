@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./Select.scss";
 
 /**
@@ -10,21 +11,52 @@ import "./Select.scss";
 function Select(props) {
   const {
     className = '',
+    defaultValue = null,
     ...rest
   } = props
 
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState(defaultValue)
+
+  const onChange = (newValue) => {
+    setValue(newValue)
+    setOpen(false)
+  }
+  
+  const acitveOption = props.children.find((option) => {
+    return option.props.value === value
+  })
+
   return (
     <div className={`Select ${className}`} {...rest}>
-      <div className="Select__value form-control">
+      <div className="Select__value form-control"
+           onClick={() => setOpen(!open)}
+      >
         <i className="icon-Arrow---Down" />
-        <span>Delivery</span>
+        <span>{acitveOption.props.label}</span>
       </div>
 
-      <div className="Select__dropdown">
-        <div className="Select__option Select__option_disable">Dine in</div>
-        <div className="Select__option">To Go</div>
-        <div className="Select__option Select__option_active">Delivery</div>
-      </div>
+      {open && (
+        <div className="Select__dropdown">
+          {props.children.map(Option => React.cloneElement(Option, {
+            active: value,
+            onChange: onChange
+          }))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+Select.Option = function(props) {
+  const {label, value, active, onChange} = props
+
+  return (
+    <div
+      className={`Select__option ${value === active ? 'Select__option_active' : ''}`}
+      onClick={() => onChange(value)}
+    >
+      {label}
     </div>
   )
 }

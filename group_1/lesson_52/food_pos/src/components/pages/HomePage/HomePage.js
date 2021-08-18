@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { api } from "../../../api";
+import { Cart } from "../../blocks/cart/Cart";
 import { ProductCard } from "../../blocks/product-card/ProductCard";
 import { Input } from "../../ui/input/Input";
 import { Select } from "../../ui/select/Select";
@@ -8,6 +10,14 @@ const {TabItem} = Tabs
 
 function HomePage() {
   const [activeTab, setActiveTab] = useState(0)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    api.getProducts()
+      .then(res => setProducts(res.products))
+    // api.getCategories()
+      // .then(res => setCatigories(res.cat))
+  }, [])
 
   return (
     <BaseTemplate>
@@ -15,7 +25,7 @@ function HomePage() {
         {/* Title & Search */}
         <div className="row mb-3">
           <div className="col-6">
-            <h1 className="h2 mb-1">Jaegar Resto</h1>
+            <h1 className="h1 mb-1">Jaegar Resto</h1>
             <div className="text-white2">{new Date().toLocaleDateString('US-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</div>
           </div>
           <div className="col-6">
@@ -24,7 +34,7 @@ function HomePage() {
         </div>
         {/* Tabs */}
         <Tabs className="mb-3" value={activeTab} onChange={(idx) => setActiveTab(idx)}>
-          <TabItem label="Hot Dishes" />
+          <TabItem label="Hot Dishes" value="hot" />
           <TabItem label="Cold Dishes" />
           <TabItem label="Soup" />
           <TabItem label="Grill" />
@@ -32,69 +42,34 @@ function HomePage() {
           <TabItem label="Dessert" />
         </Tabs>
         {/* Products */}
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-6">
             Products
           </div>
           <div className="col-6">
-            <Select className="ml-auto" />
-            {/* 
-            То как должен выглядить селект
-            <Select defaultValue="lucy" onChange={handleChange}>  
-              <Option value="jack">Jack</Option>
-              <Option value="lucy">Lucy</Option>
-              <Option value="disabled" disabled>
-                Disabled
-              </Option>
-              <Option value="Yiminghe">yiminghe</Option>
+            <Select defaultValue="delivery"
+                    onChange={console.log}
+                    className="ml-auto"
+                    style={{
+                      width: 120,
+                      maxWidth: '100%',
+                    }}
+            >
+              <Select.Option label="Dile In" value="dilein" />
+              <Select.Option label="To Go" value="togo" />
+              <Select.Option label="Delivery" value="delivery" />
             </Select>
-            */}
           </div>
         </div>
         <div className="row">
-          {[
-              {
-                id: '15',
-                image: 'https://picsum.photos/100/100',
-                name: 'Spicy seasoned seafood noodles',
-                price: 2.29,
-                avaliable_count: 20
-              },
-              {
-                id: '10',
-                image: 'https://picsum.photos/100/100',
-                name: 'Spicy seasoned seafood noodles',
-                price: 2.29,
-                avaliable_count: 20
-              },
-              {
-                id: '11',
-                image: 'https://picsum.photos/100/100',
-                name: 'Spicy seasoned seafood noodles',
-                price: 2.29,
-                avaliable_count: 20
-              },
-              {
-                id: '12',
-                image: 'https://picsum.photos/100/100',
-                name: 'Spicy seasoned seafood noodles',
-                price: 2.29,
-                avaliable_count: 20
-              },
-              {
-                id: '13',
-                image: 'https://picsum.photos/100/100',
-                name: 'Spicy seasoned seafood noodles',
-                price: 2.29,
-                avaliable_count: 20
-              },
-            ].map(product => (
+          {products.map(product => (
               <div className="col-4">
                 <ProductCard data={product} key={product.id} />
               </div>
             ))}
         </div>
       </div>
+      <Cart />
     </BaseTemplate>
   )
 }

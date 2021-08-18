@@ -5,11 +5,17 @@
   font-size: 14px;
   line-height: 1.4;
 
-  &__value > [class^='icon-'] {
-    position: absolute;
-    font-size: 19px;
-    left: 14px;
-    top: 14px;
+  &__value {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+
+    & > [class^='icon-'] {
+      position: absolute;
+      font-size: 19px;
+      left: 14px;
+      top: 14px;
+    }
   }
 
   .form-control {
