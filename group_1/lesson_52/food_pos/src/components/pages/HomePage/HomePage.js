@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ProductCard } from "../../blocks/product-cart/ProductCart";
+import { ProductCard } from "../../blocks/product-card/ProductCard";
 import { Input } from "../../ui/input/Input";
 import { Select } from "../../ui/select/Select";
 import { Tabs } from "../../ui/tabs/Tabs";

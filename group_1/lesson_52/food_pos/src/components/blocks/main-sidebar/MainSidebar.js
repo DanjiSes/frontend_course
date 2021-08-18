@@ -17,7 +17,7 @@ function MainSidebar() {
         </ul>
       </nav>
       {/* Nav */}
-      <nav className="main-nav">
+      <nav className="main-nav" style={{ marginBottom: 'auto' }}>
         <ul>
           <li>
             <NavLink to="/" exact>
