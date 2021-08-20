@@ -1,63 +1,64 @@
-import React, { useEffect, useRef, useState } from "react"
-import "./Tabs.scss"
+import React, { useEffect, useRef, useState } from "react";
+import "./Tabs.scss";
 
 let prevAcitveButton;
 
 function Tabs(props) {
-  let { value, onChange, className, ...rest } = props
+  let { value, onChange, className, ...rest } = props;
 
-  let activeButtonRev = useRef()
+  let activeButtonRev = useRef();
   let [lineLeft, setLineLeft] = useState(
-    activeButtonRev.current ?
-      activeButtonRev.current.getBoundingClientRect().left :
-      0
-  )
+    activeButtonRev.current
+      ? activeButtonRev.current.getBoundingClientRect().left
+      : 0
+  );
 
   const setActive = (idx, button) => {
-    onChange(idx)
-  }
+    onChange(idx);
+  };
 
   useEffect(() => {
-    if (!prevAcitveButton) prevAcitveButton = activeButtonRev.current
+    if (!prevAcitveButton) prevAcitveButton = activeButtonRev.current;
 
-    const currentButtonLeft = activeButtonRev.current.getBoundingClientRect().left
-    const prevButtonLeft = prevAcitveButton.getBoundingClientRect().left
-    const diffLeft = currentButtonLeft - prevButtonLeft
+    const currentButtonLeft =
+      activeButtonRev.current?.getBoundingClientRect().left;
+    const prevButtonLeft = prevAcitveButton?.getBoundingClientRect().left;
+    const diffLeft = currentButtonLeft - prevButtonLeft;
 
-    setLineLeft(lineLeft + diffLeft)
+    setLineLeft(lineLeft + diffLeft);
 
-    prevAcitveButton = activeButtonRev.current
-  }, [value])
+    prevAcitveButton = activeButtonRev.current;
+  }, [value]);
 
   return (
     <div className={`Tabs ${className}`} {...rest}>
-      {props.children.map((Tab, idx) => (
+      {props.children.map((Tab, idx) =>
         React.cloneElement(Tab, {
           active: idx === value,
           activeButtonRev: activeButtonRev,
           setActive: setActive,
           idx: idx,
-          key: idx
+          key: idx,
         })
-      ))}
+      )}
 
-      <span className="Tabs-line" style={{left: lineLeft}} />
+      <span className="Tabs-line" style={{ left: lineLeft }} />
     </div>
-  )
+  );
 }
 
-Tabs.TabItem = function(props) {
-  const { label, active, setActive, idx, activeButtonRev } = props
+Tabs.TabItem = function (props) {
+  const { label, active, setActive, idx, activeButtonRev } = props;
 
   return (
     <button
       ref={active ? activeButtonRev : null}
-      className={`TabItem ${active ? 'TabItem-active' : ''}`}
+      className={`TabItem ${active ? "TabItem-active" : ""}`}
       onClick={(e) => setActive(idx, e.target)}
     >
       {label}
     </button>
-  )
-}
+  );
+};
 
-export {Tabs}
+export { Tabs };

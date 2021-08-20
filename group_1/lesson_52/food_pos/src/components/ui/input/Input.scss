@@ -5,9 +5,12 @@
   font-size: 14px;
   line-height: 1.4;
 
-  &.with-icon {
+  input {
+    width: 100%;
+  }
 
-    & > [class^='icon-'] {
+  &.with-icon {
+    & > [class^="icon-"] {
       position: absolute;
       font-size: 19px;
       left: 14px;
@@ -17,8 +20,8 @@
     .form-control {
       padding-left: 42px;
 
-      &:focus + [class^='icon-'] {
-        opacity: .3;
+      &:focus + [class^="icon-"] {
+        opacity: 0.3;
       }
     }
   }
@@ -27,14 +30,14 @@
 .form-control {
   padding: 14px;
   border-radius: 8px;
-  background: #2D303E;
-  color: #ABBBC2;
-  border: 1px solid #393C49;
+  background: #2d303e;
+  color: #abbbc2;
+  border: 1px solid #393c49;
   display: block;
   color: #fff;
   outline: none;
 
   &:focus {
-    box-shadow: 0 0 15px rgba(#fff, .1);
+    box-shadow: 0 0 15px rgba(#fff, 0.1);
   }
 }

@@ -10,27 +10,30 @@ import "./Select.scss";
 
 function Select(props) {
   const {
-    className = '',
+    className = "",
     defaultValue = null,
+    onChange: handleChange,
     ...rest
-  } = props
+  } = props;
 
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState(defaultValue)
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(defaultValue);
 
   const onChange = (newValue) => {
-    setValue(newValue)
-    setOpen(false)
-  }
-  
+    setValue(newValue);
+    setOpen(false);
+    if (handleChange) handleChange(newValue);
+  };
+
   const acitveOption = props.children.find((option) => {
-    return option.props.value === value
-  })
+    return option.props.value === value;
+  });
 
   return (
     <div className={`Select ${className}`} {...rest}>
-      <div className="Select__value form-control"
-           onClick={() => setOpen(!open)}
+      <div
+        className="Select__value form-control"
+        onClick={() => setOpen(!open)}
       >
         <i className="icon-Arrow---Down" />
         <span>{acitveOption.props.label}</span>
@@ -38,27 +41,31 @@ function Select(props) {
 
       {open && (
         <div className="Select__dropdown">
-          {props.children.map(Option => React.cloneElement(Option, {
-            active: value,
-            onChange: onChange
-          }))}
+          {props.children.map((Option) =>
+            React.cloneElement(Option, {
+              active: value,
+              onChange: onChange,
+            })
+          )}
         </div>
       )}
     </div>
-  )
+  );
 }
 
-Select.Option = function(props) {
-  const {label, value, active, onChange} = props
+Select.Option = function (props) {
+  const { label, value, active, onChange } = props;
 
   return (
     <div
-      className={`Select__option ${value === active ? 'Select__option_active' : ''}`}
+      className={`Select__option ${
+        value === active ? "Select__option_active" : ""
+      }`}
       onClick={() => onChange(value)}
     >
       {label}
     </div>
-  )
-}
+  );
+};
 
-export { Select }
+export { Select };
