@@ -1,13 +1,14 @@
-import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../../../store/cart";
+
 import { Button } from "../../../ui/button/Button";
 import { Input } from "../../../ui/input/Input";
+import { useDispatch } from "react-redux";
 
-function ProductItem({ data: { product, count } }) {
+function ProductItem({ data: { product, count, deliveryType } }) {
   const dispatch = useDispatch();
 
   const delFromCart = () => {
-    dispatch(removeFromCart(product));
+    dispatch(removeFromCart(`${product.id}-${deliveryType}`));
   };
 
   const changeCount = (e) => {

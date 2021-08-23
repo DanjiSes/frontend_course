@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../../../api";
+
+import BaseTemplate from "../_templates/base/BaseTemplate";
 import { Cart } from "../../blocks/cart/Cart";
-import { ProductCard } from "../../blocks/product-card/ProductCard";
 import { Input } from "../../ui/input/Input";
+import { ProductCard } from "../../blocks/product-card/ProductCard";
 import { Select } from "../../ui/select/Select";
 import { Tabs } from "../../ui/tabs/Tabs";
-import BaseTemplate from "../_templates/base/BaseTemplate";
+import { api } from "../../../api";
+
 const { TabItem } = Tabs;
 
 function HomePage() {
   const [activeTab, setActiveTab] = useState(0);
-  // TODO: Обединить лоадинг в один общий стейт
   const [products, setProducts] = useState({
     items: [],
     loading: false,
@@ -21,6 +22,11 @@ function HomePage() {
     loading: false,
     error: null,
   });
+
+  const [search, setSearch] = useState("");
+  // TODO: Добавить фильтр категории
+
+  const [deliveryType, setDeliveryType] = useState("dinein");
 
   useEffect(() => {
     // Начинаю загрузку
@@ -60,6 +66,10 @@ function HomePage() {
       });
   }, []);
 
+  const filteredProducts = products.items.filter((product) => {
+    return product.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+  });
+
   return (
     <BaseTemplate>
       <div className="p-24">
@@ -81,6 +91,8 @@ function HomePage() {
               placeholder="Search for food, coffe, etc.."
               className="ml-auto"
               icon="Home"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
@@ -105,15 +117,15 @@ function HomePage() {
           <div className="col-6">Products</div>
           <div className="col-6">
             <Select
-              defaultValue="delivery"
-              onChange={console.log}
+              defaultValue={deliveryType}
+              onChange={(newValue) => setDeliveryType(newValue)}
               className="ml-auto"
               style={{
                 width: 120,
                 maxWidth: "100%",
               }}
             >
-              <Select.Option label="Dile In" value="dilein" />
+              <Select.Option label="Dine In" value="dinein" />
               <Select.Option label="To Go" value="togo" />
               <Select.Option label="Delivery" value="delivery" />
             </Select>
@@ -125,9 +137,13 @@ function HomePage() {
           ) : products.error ? (
             <div>{products.error.message}</div>
           ) : (
-            products.items.map((product) => (
-              <div className="col-4">
-                <ProductCard data={product} key={product.id} />
+            filteredProducts.map((product) => (
+              <div className="col-12 col-md-4 col-xl-3">
+                <ProductCard
+                  data={product}
+                  key={product.id}
+                  deliveryType={deliveryType}
+                />
               </div>
             ))
           )}

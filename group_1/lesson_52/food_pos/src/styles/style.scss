@@ -1,10 +1,11 @@
-@import 'variables.scss';
-@import 'fonts.scss';
+@import "variables.scss";
+@import "fonts.scss";
 
-@import 'normalize-css/normalize';
-@import 'bootstrap/dist/css/bootstrap-grid.min';
+@import "normalize-css/normalize";
+@import "bootstrap/dist/css/bootstrap-grid.min";
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: $dark;
@@ -64,4 +65,8 @@ html, body {
 
 .ml-auto {
   margin-left: auto !important;
+}
+
+.text-gray {
+  color: #abbbc2;
 }

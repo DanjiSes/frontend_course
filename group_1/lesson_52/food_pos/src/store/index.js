@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
 import cartSliceReducer from "./cart";
+import { configureStore } from "@reduxjs/toolkit";
 
 export default configureStore({
   reducer: {
@@ -13,6 +13,7 @@ export default configureStore({
     products: {
       [id]: {
         count: <int>,
+        deliveryType: 'dinein',
         product: {product}
       }
     }

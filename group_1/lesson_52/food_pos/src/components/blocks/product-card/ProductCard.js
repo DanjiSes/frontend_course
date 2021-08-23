@@ -1,15 +1,16 @@
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../store/cart";
 import "./ProductCard.scss";
 
+import { addToCart } from "../../../store/cart";
+import { useDispatch } from "react-redux";
+
 function ProductCard(props) {
-  const { data } = props;
-  const { image, name, price, avaliable_count } = data;
+  const { data: product, deliveryType = "dinein" } = props;
+  const { image, name, price, avaliable_count } = product;
 
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(addToCart([data]));
+    dispatch(addToCart([product, undefined, deliveryType]));
   };
 
   return (
