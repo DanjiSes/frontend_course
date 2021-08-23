@@ -22,6 +22,11 @@ $theme-colors: (
   &-lg {
     padding: 14px 20px;
   }
+
+  &-flat {
+    background: none !important;
+    border: none !important;
+  }
 }
 
 // Default

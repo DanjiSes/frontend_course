@@ -52,6 +52,7 @@ function Cart() {
 
         <Button
           label="Continue to payment"
+          disabled={subtotalPrice <= 0}
           fullWidth
           size="lg"
           style={{ boxShadow: "0px 8px 24px rgba(234, 124, 105, 0.3)" }}

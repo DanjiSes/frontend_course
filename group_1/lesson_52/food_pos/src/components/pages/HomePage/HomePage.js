@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import BaseTemplate from "../_templates/base/BaseTemplate";
 import { Cart } from "../../blocks/cart/Cart";
+import { Checkout } from "../../blocks/checkout/Checkout";
 import { Input } from "../../ui/input/Input";
 import { ProductCard } from "../../blocks/product-card/ProductCard";
 import { Select } from "../../ui/select/Select";
@@ -150,6 +151,7 @@ function HomePage() {
         </div>
       </div>
       <Cart />
+      <Checkout />
     </BaseTemplate>
   );
 }
