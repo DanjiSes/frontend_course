@@ -1,9 +1,47 @@
+import { useState } from 'react'
 import { Button } from "../../../ui/button/Button";
 import { Input } from "../../../ui/input/Input";
 import { Select } from "../../../ui/select/Select";
 import { PaymentMethodsSelect } from "./PaymentMethodsSelect";
 
 function Payment({ hideCheckout }) {
+  const [formData, setFormData] = useState({
+    holder_name: ''
+  })
+  const [formErrors, setFormErrors] = useState({})
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+    validate({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const validate = (data) => {
+    const errors = {}
+    
+    for (let name in data) {
+      const value = data[name]
+      switch (name) {
+        case 'holder_name':
+  
+          if (!value) {
+            errors[name] = 'Поле обязательно для заполнения'
+          }
+  
+          break
+      }
+    }
+
+    setFormErrors(errors)
+  }
+
+  console.log(formData, formErrors)
+
   return (
     <div className="Payment">
       <div
@@ -23,7 +61,8 @@ function Payment({ hideCheckout }) {
         <PaymentMethodsSelect defaultValue="card" onChange={console.log} className="mb-3" />
         <div class="mb-3">
           <label className="mb-2">Cardholder Name</label>
-          <Input placeholder="Levi Ackerman" className="w-100" />
+          <Input name="holder_name" onChange={handleChange} placeholder="Levi Ackerman" className="w-100" />
+          {formErrors['holder_name'] && <small style={{ color: 'red' }}>{formErrors['holder_name']}</small>}
         </div>
         <div class="mb-3">
           <label className="mb-2">Card Number</label>
@@ -61,7 +100,7 @@ function Payment({ hideCheckout }) {
           </div>
         </div>
 
-        <div className="row" style={{marginTop: 'auto'}}>
+        <div className="row" style={{ marginTop: 'auto' }}>
           <div class="col-6">
             <Button type="button" onClick={hideCheckout} label="Cancel" theme="outline" size="lg" fullWidth />
           </div>
