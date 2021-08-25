@@ -25,10 +25,10 @@ function Tabs(props) {
     const prevButtonLeft = prevAcitveButton?.getBoundingClientRect().left;
     const diffLeft = currentButtonLeft - prevButtonLeft;
 
-    setLineLeft(lineLeft + diffLeft);
+    setLineLeft((lineLeft + diffLeft) || 0);
 
     prevAcitveButton = activeButtonRev.current;
-  }, [value]);
+  }, [value, props.children]);
 
   return (
     <div className={`Tabs ${className}`} {...rest}>

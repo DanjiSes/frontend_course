@@ -11,7 +11,7 @@ export const deliveryTypes = [
   { name: "Delivery", value: "delivery" },
 ];
 
-function Cart() {
+function Cart({ onShowCheckout }) {
   const [active, setActive] = useState(deliveryTypes[0].value);
   const products = useSelector((state) => state.cart.products);
 
@@ -56,6 +56,7 @@ function Cart() {
           fullWidth
           size="lg"
           style={{ boxShadow: "0px 8px 24px rgba(234, 124, 105, 0.3)" }}
+          onClick={onShowCheckout}
         />
       </div>
     </div>

@@ -12,7 +12,7 @@ function ProductItem({ data: { product, count, deliveryType } }) {
   };
 
   const changeCount = (e) => {
-    dispatch(addToCart([product, parseInt(e.target.value)]));
+    dispatch(addToCart([product, parseInt(e.target.value) , deliveryType]));
   };
 
   return (
@@ -25,7 +25,7 @@ function ProductItem({ data: { product, count, deliveryType } }) {
               <h3>{product.name}</h3>
               <span>$ {product.price}</span>
             </div>
-            <Input onChange={changeCount} value={count} />
+            <Input onChange={changeCount} value={count} selectOnFocus />
           </div>
           <Input placeholder="Order Note..." />
         </div>

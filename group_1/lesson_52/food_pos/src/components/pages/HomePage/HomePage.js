@@ -25,7 +25,7 @@ function HomePage() {
   });
 
   const [search, setSearch] = useState("");
-  // TODO: Добавить фильтр категории
+  const [isCheckoutVisible, setIsCheckoutVisible] = useState(false)
 
   const [deliveryType, setDeliveryType] = useState("dinein");
 
@@ -67,9 +67,13 @@ function HomePage() {
       });
   }, []);
 
-  const filteredProducts = products.items.filter((product) => {
-    return product.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
-  });
+  const filteredProducts = products.items
+    .filter((product) => {
+      return product.name.toLowerCase().indexOf(search.toLowerCase()) >= 0;
+    })
+    .filter((product) => {
+      return product.category_id === categories.items[activeTab].id
+    })
 
   return (
     <BaseTemplate>
@@ -90,7 +94,7 @@ function HomePage() {
           <div className="col-6">
             <Input
               placeholder="Search for food, coffe, etc.."
-              className="ml-auto"
+              className="ml-auto w-max-content"
               icon="Home"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -98,21 +102,15 @@ function HomePage() {
           </div>
         </div>
         {/* Tabs */}
-        {categories.loading ? (
-          <div>Categories loading...</div>
-        ) : categories.error ? (
-          <div>Error</div>
-        ) : (
-          <Tabs
-            className="mb-3"
-            value={activeTab}
-            onChange={(idx) => setActiveTab(idx)}
-          >
-            {categories.items.map((c) => (
-              <TabItem label={c.name} />
-            ))}
-          </Tabs>
-        )}
+        <Tabs
+          className="mb-3"
+          value={activeTab}
+          onChange={(idx) => setActiveTab(idx)}
+        >
+          {categories.items.map((c) => (
+            <TabItem label={c.name} />
+          ))}
+        </Tabs>
         {/* Products */}
         <div className="row mb-5">
           <div className="col-6">Products</div>
@@ -150,8 +148,8 @@ function HomePage() {
           )}
         </div>
       </div>
-      <Cart />
-      <Checkout />
+      <Cart onShowCheckout={() => setIsCheckoutVisible(true)} />
+      <Checkout visible={isCheckoutVisible} hide={() => setIsCheckoutVisible(false)} />
     </BaseTemplate>
   );
 }

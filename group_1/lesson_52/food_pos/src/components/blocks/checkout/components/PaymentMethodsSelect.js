@@ -2,40 +2,36 @@ import CheckIcon from "../../../../static/images/payments/Icon-Fill-checkmark-ci
 import CreditIcon from "../../../../static/images/payments/Icon-Line-Card.svg";
 import PaypalIcon from "../../../../static/images/payments/Icon-Line-Paypal.svg";
 import WalletIcon from "../../../../static/images/payments/Icon-Line-Iconly-Light outline-Wallet.svg";
+import { useState } from "react";
 
-function PaymentMethodsSelect() {
+const VALUES = [
+  { name: "Credit Card", value: "card", icon: CreditIcon },
+  { name: "PayPal", value: "paypal", icon: PaypalIcon },
+  { name: "Cash", value: "cash", icon: WalletIcon },
+]
+
+function PaymentMethodsSelect({ defaultValue, onChange, className, ...rest }) {
+  const [value, setValue] = useState(defaultValue)
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+    onChange(e.target.value)
+  }
+
   return (
-    <div className="PaymentMethodsSelect">
-      <label className="PaymentMethodsSelect__item PaymentMethodsSelect__item_active">
-        <input type="radio" name="payment-method" value="credit-card" hidden />
-        <img src={CreditIcon} alt="" />
-        <span>Credit Card</span>
-        <img
-          className="PaymentMethodsSelect__item__check"
-          alt=""
-          src={CheckIcon}
-        />
-      </label>
-      <label className="PaymentMethodsSelect__item">
-        <input type="radio" name="payment-method" value="paypal" hidden />
-        <img src={PaypalIcon} alt="" />
-        <span>Paypal</span>
-        <img
-          className="PaymentMethodsSelect__item__check"
-          alt=""
-          src={CheckIcon}
-        />
-      </label>
-      <label className="PaymentMethodsSelect__item">
-        <input type="radio" name="payment-method" value="cash" hidden />
-        <img src={WalletIcon} alt="" />
-        <span>Cash</span>
-        <img
-          className="PaymentMethodsSelect__item__check"
-          alt=""
-          src={CheckIcon}
-        />
-      </label>
+    <div className={"PaymentMethodsSelect " + className} {...rest}>
+      {VALUES.map(payment => (
+        <label className={`PaymentMethodsSelect__item ${payment.value === value ? 'PaymentMethodsSelect__item_active' : ''}`}>
+          <input onChange={handleChange} type="radio" name="payment-method" value={payment.value} hidden />
+          <img src={payment.icon} alt="" />
+          <span>{payment.name}</span>
+          <img
+            className="PaymentMethodsSelect__item__check"
+            alt=""
+            src={CheckIcon}
+          />
+        </label>
+      ))}
     </div>
   );
 }

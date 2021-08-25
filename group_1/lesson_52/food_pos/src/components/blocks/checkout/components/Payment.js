@@ -1,6 +1,9 @@
+import { Button } from "../../../ui/button/Button";
+import { Input } from "../../../ui/input/Input";
+import { Select } from "../../../ui/select/Select";
 import { PaymentMethodsSelect } from "./PaymentMethodsSelect";
 
-function Payment() {
+function Payment({ hideCheckout }) {
   return (
     <div className="Payment">
       <div
@@ -11,10 +14,61 @@ function Payment() {
         <span className="text-gray">3 payment method available</span>
       </div>
 
-      <form>
+      <form style={{
+        display: 'flex',
+        flex: '1',
+        flexDirection: 'column'
+      }}>
         <h3 className="h2 mt-0">Payment Method</h3>
+        <PaymentMethodsSelect defaultValue="card" onChange={console.log} className="mb-3" />
+        <div class="mb-3">
+          <label className="mb-2">Cardholder Name</label>
+          <Input placeholder="Levi Ackerman" className="w-100" />
+        </div>
+        <div class="mb-3">
+          <label className="mb-2">Card Number</label>
+          <Input placeholder="**** **** **** ****" className="w-100" />
+        </div>
+        <div className="row">
+          <div class="col-6 mb-3">
+            <label className="mb-2">Expriration Date</label>
+            <Input placeholder="**/****" className="w-100" />
+          </div>
+          <div class="col-6 mb-3">
+            <label className="mb-2">CVV</label>
+            <Input placeholder="***" type="password" className="w-100" />
+          </div>
+        </div>
+        <hr className="mb-3" />
+        <div className="row">
+          <div class="col-6 mb-3">
+            <label className="mb-2">Expriration Date</label>
+            <Select
+              defaultValue="dinein"
+              className="ml-auto"
+              style={{
+                maxWidth: "100%",
+              }}
+            >
+              <Select.Option label="Dine In" value="dinein" />
+              <Select.Option label="To Go" value="togo" />
+              <Select.Option label="Delivery" value="delivery" />
+            </Select>
+          </div>
+          <div class="col-6 mb-3">
+            <label className="mb-2">Table no.</label>
+            <Input placeholder="123" type="number" className="w-100" />
+          </div>
+        </div>
 
-        <PaymentMethodsSelect onChange={console.log} />
+        <div className="row" style={{marginTop: 'auto'}}>
+          <div class="col-6">
+            <Button type="button" onClick={hideCheckout} label="Cancel" theme="outline" size="lg" fullWidth />
+          </div>
+          <div class="col-6">
+            <Button label="Confirm Payment" size="lg" fullWidth />
+          </div>
+        </div>
       </form>
     </div>
   );

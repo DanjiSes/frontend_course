@@ -5,6 +5,13 @@
   top: 0;
   right: 0;
   height: 100vh;
+
+  transform: translateX(100%);
+  transition: transform .4s;
+
+  &_visible {
+    transform: translateX(0);
+  }
 }
 
 .Confirmation,

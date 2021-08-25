@@ -2,7 +2,7 @@ import { Button } from "../../../ui/button/Button";
 import { ProductList } from "../../cart/components/ProductsList";
 import { useSelector } from "react-redux";
 
-function Confirmation() {
+function Confirmation({ hideCheckout }) {
   const products = useSelector((state) => state.cart.products);
 
   const subtotalPrice = Object.values(products)
@@ -13,7 +13,7 @@ function Confirmation() {
 
   return (
     <div className="Confirmation">
-      <Button flat style={{ textAlign: "left", paddingLeft: 0 }}>
+      <Button flat onClick={hideCheckout} style={{ textAlign: "left", paddingLeft: 0 }}>
         <i className="icon-Back" style={{ fontSize: 25 }} />
       </Button>
 
@@ -25,7 +25,7 @@ function Confirmation() {
           <h3 className="h1 mb-2 mt-2">Confirmation</h3>
           <span className="text-gray">Orders #34562</span>
         </div>
-        <Button>
+        <Button onClick={hideCheckout}>
           <i className="icon-Add" style={{ fontSize: 30 }} />
         </Button>
       </div>
